@@ -1,0 +1,53 @@
+# Modern SQLAlchemy 2.0 Curriculum
+
+Welcome to the comprehensive guide to **Modern SQLAlchemy 2.0+**. This folder contains self-contained, runnable Python examples and detailed guides covering the entire modern SQLAlchemy ecosystem using the **Unified 2.0 Style**.
+
+---
+
+## 📚 Curriculum Structure
+
+### [01. Engine & Connections](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/01_engine_and_connections/01_engine_basics.py)
+* `create_engine()` configuration, connection pooling (`pool_size`, `max_overflow`).
+* Direct SQL execution using `text()` and parameter binding (`:param`).
+* Auto-commit vs explicit transaction management (`engine.connect()` vs `engine.begin()`).
+
+### [02. Declarative Mapping 2.0](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/02_declarative_mapping/01_modern_declarative_models.py)
+* Modern `DeclarativeBase` subclassing (replacing legacy `declarative_base()`).
+* Type annotations with `Mapped[T]` and `mapped_column()`.
+* Primary keys, autoincrement, optional fields, server defaults, data types (`Integer`, `String`, `DateTime`, `Enum`, `JSON`), `__tablename__`, and `__repr__`.
+
+### [03. Session & CRUD](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/03_session_and_crud/)
+* **[01_session_lifecycle_crud.py](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/03_session_and_crud/01_session_lifecycle_crud.py)**: `Session` lifecycle, `sessionmaker`, Unit of Work pattern (`add`, `commit`, `rollback`, `flush`, `refresh`, `get`, `delete`).
+* **[02_select_queries_and_filtering.py](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/03_session_and_crud/02_select_queries_and_filtering.py)**: 2.0 `select()` syntax, filtering (`where()`, `filter_by()`, `and_`, `or_`, `in_`, `like()`, `ilike()`), ordering, pagination (`limit`, `offset`), and scalar execution (`scalars()`, `scalar_one()`, `all()`).
+
+### [04. Deep-Dive Relationships & Loading Strategies](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/04_relationships_and_joins/)
+* **[01_standard_relationships.py](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/04_relationships_and_joins/01_standard_relationships.py)**: 1:1, 1:N, N:1, M:N (Association Table & Association Object Pattern with extra payload columns).
+* **[02_self_referential_relationships.py](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/04_relationships_and_joins/02_self_referential_relationships.py)**: Self-Referential 1:1 (Peer Mentors), Self-Referential 1:N (Org Manager Hierarchy), and Self-Referential M:N (Followers/Following Graph).
+* **[03_loading_strategies_deep_dive.py](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/04_relationships_and_joins/03_loading_strategies_deep_dive.py)**: Runnable comparison of `lazy="select"`, `selectinload()`, `joinedload()`, `subqueryload()`, `contains_eager()`, `lazy="raise"`, and `WriteOnlyMapped[T]`.
+* **[04_relationships_guide.md](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/04_relationships_and_joins/04_relationships_guide.md)**: Architectural reference guide, FK setup rules, and strategy comparison matrix.
+
+### [05. Advanced Queries](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/05_advanced_queries/)
+* **[01_aggregations_and_grouping.py](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/05_advanced_queries/01_aggregations_and_grouping.py)**: `group_by()`, `having()`, and aggregate functions (`func.count()`, `func.sum()`, `func.avg()`, `func.max()`).
+* **[02_ctes_subqueries_windows.py](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/05_advanced_queries/02_ctes_subqueries_windows.py)**: Subqueries (`subquery()`), CTEs (`cte()`), Window functions (`over()`), and `case()` statements.
+* **[03_bulk_operations.py](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/05_advanced_queries/03_bulk_operations.py)**: 2.0 bulk `insert()`, `update()`, and `delete()` statements with `.returning()`.
+
+### [06. Async SQLAlchemy](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/06_async_sqlalchemy/01_async_engine_and_session.py)
+* Asynchronous engine (`create_async_engine`), `async_sessionmaker`, `AsyncSession`, `await session.execute()`, and async relationship loading rules.
+
+### [07. Transactions & Events](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/07_transactions_and_events/01_transactions_isolation_events.py)
+* Savepoints/Nested transactions (`session.begin_nested()`), isolation levels, and event listeners (`event.listen()`, `@event.listens_for`) for automatic timestamp auditing.
+
+### [08. Database Migrations (Alembic)](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/SQLAlchemy/08_alembic_migrations/01_alembic_overview.md)
+* Alembic CLI setup, `env.py` integration with `DeclarativeBase`, autogenerated migration revisions (`alembic revision --autogenerate`), upgrades, and downgrades.
+
+---
+
+## 🚀 Running the Examples
+
+Each script is standalone and can be executed directly using Python:
+
+```bash
+python3 SQLAlchemy/04_relationships_and_joins/01_standard_relationships.py
+python3 SQLAlchemy/04_relationships_and_joins/02_self_referential_relationships.py
+python3 SQLAlchemy/04_relationships_and_joins/03_loading_strategies_deep_dive.py
+```

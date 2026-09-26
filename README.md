@@ -1,53 +1,39 @@
-# FastAPI Learning Curriculum
+# Comprehensive FastAPI & Modern SQLAlchemy 2.0 Curriculum
 
-This workspace is a structured, hands-on tutorial for learning and mastering **FastAPI**. Every folder represents a core module, containing an explanatory `README.md` and fully runnable code examples.
-
----
-
-## Directory Index
-
-1. **[01_basics](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/01_basics)**
-   * Minimal app, Path/Query parameters, Request Bodies, mixed setups.
-2. **[02_request_validation](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/02_request_validation)**
-   * String/Numeric validation using `Query` and `Path`, Pydantic models & validation.
-3. **[03_response_handling](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/03_response_handling)**
-   * Serialization, filtering via `response_model`, status codes, HTML/Streaming/File responses.
-4. **[04_dependencies](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/04_dependencies)**
-   * Dependency Injection, nested dependencies, yielding cleanup resources, router/global scope.
-5. **[05_security_and_auth](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/05_security_and_auth)**
-   * API Key authentication, OAuth2 Password Bearer flow, hashing, and JWT authorization.
-6. **[06_databases_and_orm](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/06_databases_and_orm)**
-   * Integrating SQLite database with SQLModel ORM, using yield sessions for CRUD.
-7. **[07_advanced_routing](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/07_advanced_routing)**
-   * Modular application structuring with `APIRouter`, OpenAPI tags and customization.
-8. **[08_middleware_and_cors](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/08_middleware_and_cors)**
-   * CORS configuration and building custom ASGI middlewares (e.g., requests execution timers).
-9. **[09_background_tasks_and_events](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/09_background_tasks_and_events)**
-   * Fire-and-forget background processing and lifespan context managers (`startup`/`shutdown`).
-10. **[10_websockets](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/10_websockets)**
-    * Full-duplex persistent messaging, routing, and broadcasting to active clients (Chat Room).
-11. **[11_testing](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/11_testing)**
-    * Writing synchronous and asynchronous unit tests using `pytest` and `TestClient` / `httpx.AsyncClient`.
-12. **[12_deployment_and_config](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/12_deployment_and_config)**
-    * Environment configuration using `pydantic-settings`.
+Welcome to the complete learning repository for **FastAPI** and **Modern SQLAlchemy 2.0+**. This repository contains step-by-step topic folders as well as a unified master capstone project.
 
 ---
 
-## How to Run the Code
+## 🌟 Master Capstone Project
 
-To run any of the code examples in this curriculum, you first need to install the dependencies:
+### [Capstone Project (`capstone_project/`)](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/capstone_project/)
+* **[`main_app.py`](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/capstone_project/main_app.py)**: Single, production-ready Python application integrating ALL concepts from FastAPI (Modules 01–12) and Modern SQLAlchemy 2.0 (Modules 01–08).
+* **[`CAPSTONE_GUIDE.md`](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/capstone_project/CAPSTONE_GUIDE.md)**: Master markdown reference manual breaking down every concept, pattern, and syntax rule.
 
-```bash
-pip install fastapi uvicorn pydantic pydantic-settings sqlmodel passlib[bcrypt] python-multipart pyjwt websockets pytest httpx
-```
+---
 
-To run a specific Python file containing a FastAPI app, execute:
-```bash
-uvicorn <folder_name>.<file_name_without_extension>:app --reload
-```
+## 📚 Step-by-Step Curriculum Modules
 
-For example, to run the hello world example:
-```bash
-uvicorn 01_basics.01_hello_world:app --reload
-```
-You can then open [http://127.0.0.1:8000](http://127.0.0.1:8000) or check the interactive documentation at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
+### ⚡ FastAPI Curriculum
+1. **`01_basics/`**: Hello World, Path Parameters, Query Parameters, Request Body, Mixed Parameters.
+2. **`02_request_validation/`**: Path & Query Validation, Body Validation, Forbidding Extra Data.
+3. **`03_response_handling/`**: Response Model, Status Codes & Exceptions, Custom Responses.
+4. **`04_dependencies/`**: Basic Dependencies, Sub-Dependencies, Yield Dependencies, Global Dependencies.
+5. **`05_security_and_auth/`**: API Key Auth, OAuth2 with Password Bearer & JWT Tokens.
+6. **`06_databases_and_orm/`**: SQLModel & SQLite Integration.
+7. **`07_advanced_routing/`**: APIRouter, Routing Tags & Metadata, Custom Route Decorators.
+8. **`08_middleware_and_cors/`**: CORS Middleware, Custom HTTP Middleware.
+9. **`09_background_tasks_and_events/`**: Background Tasks, Application Lifespan Events.
+10. **`10_websockets/`**: WebSocket Basics, Multi-Client Chatroom.
+11. **`11_testing/`**: Synchronous TestClient, Async Testing & Dependency Overrides.
+12. **`12_deployment_and_config/`**: Pydantic Settings & Environment Files.
+
+### 🗄️ Modern SQLAlchemy 2.0 Curriculum (`SQLAlchemy/`)
+1. **`01_engine_and_connections/`**: `create_engine()`, Connection Pooling, Raw SQL `text()`.
+2. **`02_declarative_mapping/`**: `DeclarativeBase`, `Mapped[T]`, `mapped_column()`, Enums, JSON fields.
+3. **`03_session_and_crud/`**: Session Lifecycle, Unit of Work, `select()`, filtering, pagination.
+4. **`04_relationships_and_joins/`**: 1:1, 1:N, N:1, M:N, Self-Referential models, `selectinload()`, `joinedload()`.
+5. **`05_advanced_queries/`**: Aggregations, Grouping, HAVING, CTEs, Window Functions, Bulk DML.
+6. **`06_async_sqlalchemy/`**: Async Engine, `AsyncSession`, `async_sessionmaker`.
+7. **`07_transactions_and_events/`**: Savepoints (`begin_nested`), `@event.listens_for` audit hooks.
+8. **`08_alembic_migrations/`**: Alembic setup, `env.py`, autogenerated migration revisions.

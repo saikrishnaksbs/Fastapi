@@ -10,6 +10,8 @@ This module shows how to organize a growing codebase using FastAPI's routing sys
    * Shows how to instantiate `APIRouter` sub-routing objects, partition endpoints into different files or logic groups, and bundle them together into the main `FastAPI` instance.
 2. **[02_routing_tags.py](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/07_advanced_routing/02_routing_tags.py)**
    * Covers configuring endpoint metadata such as `tags`, routing summaries, inline markdown descriptions, and defining response dictionary custom schemas.
+3. **[03_custom_route_decorators.py](file:///Users/saikrishnakuchimanchi/Downloads/Test/Fastapi/07_advanced_routing/03_custom_route_decorators.py)**
+   * Explains how custom API route decorators (like `@bik_api`) use `router.add_api_route()` internally to register routes dynamically with custom metadata like `auth_types`.
 
 ---
 
